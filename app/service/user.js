@@ -40,6 +40,21 @@ class UserService extends Service {
       return null;
     }
   }
+
+  // 修改密码
+  async modifyPass(params) {
+    const { app } = this;
+    try {
+      return await app.mysql.update('user', {
+        ...params,
+      }, {
+        id: params.id,
+      });
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
 }
 
 module.exports = UserService;
