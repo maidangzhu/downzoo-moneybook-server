@@ -11,6 +11,16 @@ class UploadController extends Controller {
     // 需要前往 config/config.default.js 设置 config.multipart 的 mode 属性为 file
     const file = ctx.request.files[0];
 
+    if (file.size / 1024 / 1024 > 2) {
+      ctx.body = {
+        code: 413,
+        msg: '上传的图片必须小于2M',
+        data: null,
+      };
+
+      return;
+    }
+
     // 声明存放资源的路径
     let uploadDir = '';
 

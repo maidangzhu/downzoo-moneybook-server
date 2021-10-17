@@ -15,6 +15,8 @@ class UserController extends Controller {
         msg: '账号密码不能为空',
         data: null,
       };
+
+      return;
     }
     // 从user表中找出信息
     const userInfo = await ctx.service.user.getUserByName(username);
