@@ -57,7 +57,7 @@ module.exports = appInfo => {
   config.cors = {
     // origin:'*', //允许所有跨域访问，注释掉则允许上面 白名单 访问
     credentials: true, // 允许 Cookie 跨域跨域
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    allowMethods: 'PUT,POST',
   };
 
   // add your user config here
