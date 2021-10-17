@@ -48,7 +48,7 @@ class UserController extends Controller {
       ctx.body = {
         code: 500,
         msg: '注册失败',
-        data: result,
+        data: null,
       };
     }
   }
