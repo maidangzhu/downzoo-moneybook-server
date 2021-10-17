@@ -52,12 +52,13 @@ module.exports = appInfo => {
 
   config.multipart = {
     mode: 'file',
+    fileSize: '50kb',
   };
 
   config.cors = {
-    origin: '*', // 允许所有跨域访问 todo 上线前要记得处理
+    // origin:'*', //允许所有跨域访问，注释掉则允许上面 白名单 访问
     credentials: true, // 允许 Cookie 跨域跨域
-    allowMethods: 'GET,POST',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   };
 
   // add your user config here
